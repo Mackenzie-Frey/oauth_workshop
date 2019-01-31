@@ -24,7 +24,9 @@ class SessionsController < ApplicationController
       user.token    = token
       user.save
 
-      binding.pry
+      session[:user_id] = user.id
 
+      binding.pry
+      redirect_to dashboard_path
     end
 end
